@@ -76,18 +76,17 @@ poi这个复杂的因素，如何处理？
 
 终于谈到模型了，……
 
-## 2. 问题纪录
+## 2. 项目推进：分而治之
+### 数据预处理：
+* 计算Y：供需缺口gap，由demand－supply得到。指定区域和时间时，demand即order表中的记录数，supply即order表中driver非空（不等于null）的记录数。  
+* X 数据清理，备用。
 
-### Q1: CParserError  
+### 基准预测值：
+* 单单采用常识性基本均值估计的方式，不采用任何机器学习方式，进行预测，获得base（基准）预测值。测试结果。
+* 常识分析： 经验性分析
 
-	poi_1 = pd.read_csv('season_1/training_data/poi_data/poi_data', delimiter='\t')
-	
-运行：  
+### 通过机器学习算法改进
 
-	CParserError                              Traceback (most recent call last)
-	<ipython-input-16-e879f2bf6cd7> in <module>()
 
-解决：  
 
-参考：[csv - Python Pandas Error tokenizing data - Stack Overflow](http://stackoverflow.com/questions/18039057/python-pandas-error-tokenizing-data)，还没解决。
 
